@@ -66,14 +66,20 @@ function makePizza(ingredients, radius = 100) {
       for (let j = 0; j < nPieces; j++) {
         let ingEl = create(
           'g',
-          ingredientsG[ingIdx].svg,
+          ingredientsG[ingredientsToGenerate[ingIdx]].svg,
           ingLayer,
           'ingredient'
         );
         let angle = (2 * Math.PI * (Math.random() + i)) / nSlices;
         let dist = (radius - 40) * (1 - Math.pow(Math.random(), 20));
         let rot = Math.random() * 360;
-        transformEl(ingEl, dist * Math.sin(angle), dist * Math.cos(angle), rot, 0.7);
+        transformEl(
+          ingEl,
+          dist * Math.sin(angle),
+          dist * Math.cos(angle),
+          rot,
+          0.7
+        );
       }
   }
 

@@ -21,7 +21,7 @@ generateButton.addEventListener(
       salt.checked = true;
       ingredientsToGenerate.push(...ingredients.salt);
     }
-
+    // console.log(ingredientsToGenerate);
     const generatedPizza = generator(
       ingredientsToGenerate.length,
       maxPizzaIngredients
