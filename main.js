@@ -5,7 +5,7 @@ let body = document.body
 let pizza = makePizza([0,1])
 
 console.log(pizza)
-body.appendChild(pizza.graphics)
+body.appendChild(pizza)
 
 console.log('potato')
 

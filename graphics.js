@@ -50,23 +50,35 @@ function transformEl(el, transx=0, transy=0, rotate=0) {
 	setAttributes(el, { transform: transform })
 }
 
+function irregularCircle(parentEl, fill='red', amp=5, radius=100, div=10) {
+	let el = create('polygon', null, parentEl)
+	let points = ''
+	for(let i=0; i<div; i++) {
+		let ang = 2*Math.PI*i/div
+		let dist = (amp*Math.random() + radius)
+		let x = Math.sin(ang) * dist 
+		let y = Math.cos(ang) * dist
+		points += x + ',' + y + ' '
+	}
+	setAttributes(el, {points: points, fill: fill})
+}
+
 function makePizza(ingredients, radius=100) {
 
+	let side = 2*(radius + 30)
+
 	let el = create('svg', null, null, 'pizza_div')
-	setAttributes(el, { width:2*(radius+10), height:2*(radius+10) })
+	setAttributes(el, { width:side, height:side })
 
-	let massa = create('circle', null, el, 'pizza_massa') 
-	setAttributes(massa, { 
-		cx:radius+10, 
-		cy:radius+10, 
-		r:radius, 
-		stroke:'orange', 
-		'stroke-width':6, 
-		fill:'yellow'
-	})
+	let center = create('g', null, el, 'center')
+	transformEl(center, side/2, side/2)
 
-	let ingLayer = create('g', null, el, 'ingredient_layer')
-	transformEl(ingLayer, 10+radius, 10+radius)
+	let massaLayer = create('g', null, center, 'base_layer')
+	irregularCircle(center, 'orange', 5, radius+20, 40)
+	irregularCircle(center, 'red', 10, radius+5, 40)
+	irregularCircle(center, 'yellow', 10, radius, 40)
+
+	let ingLayer = create('g', null, center, 'ingredient_layer')
 
 	for(let ingIdx of ingredients) {
 		let nSlices = 5
@@ -81,6 +93,6 @@ function makePizza(ingredients, radius=100) {
 		}
 	}
 
-	return { graphics: el, ingredients: [] }
+	return el
 
 }
