@@ -2,7 +2,7 @@
 
 const generateButton = document.querySelector('#generate-btn');
 let ingredientsToGenerate = [];
-const maxPizzaIngredients = 2;
+const maxPizzaIngredients = 3;
 // Ingredients Checks
 
 const salt = document.querySelector('#salt-check');
@@ -26,7 +26,7 @@ generateButton.addEventListener(
       ingredientsToGenerate.length,
       maxPizzaIngredients
     );
-
+    console.log(generatedPizza);
     renderPizza(generatedPizza);
     renderPizzaIngredientList(generatedPizza);
   },
