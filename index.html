@@ -19,8 +19,11 @@
   <!-- <link rel="icon" href="/favicon.svg" type="image/svg+xml"> -->
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
-	
+  <!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
+
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 	<svg width="100" height="100">
 		<circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
 	</svg>
@@ -28,6 +31,48 @@
 </head>
 
 <body>
-  <script src="js/main.js"></script>
+  <div class="container">
+    <h1>Pizza Generator</h1>
+    <div class="row">
+      
+      <div class="col-sm"> 
+        <div class="generate-form" >
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="salt-check">
+            <label class="form-check-label" for="flexCheckDefault">
+              Salgado &#128526
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="sweet-check">
+            <label class="form-check-label" for="flexCheckChecked">
+              Doce &#128527
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="weird-check">
+            <label class="form-check-label" for="flexCheckChecked">
+              Estranho &#128561
+            </label>
+          </div>
+          <button type="button" class="btn btn-danger" id = "generate-btn">Generate</button>
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="svg-container"></div>
+      </div>
+      <div class="col-sm">
+        <div class="ingredients-container">
+          <ul class='list-group list-group-flush' id="ingredients-list"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+  <script src="./generator.js"></script>
+  <script src="./ingredientList.js"></script>
+  <script src="./renderList.js"></script>
+  <script src="./main.js"></script>
 </body>
 </html>
