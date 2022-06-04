@@ -1,9 +1,9 @@
 const generator = (dataLength, returnLength) => {
   arr = [];
   for (let i = 0; i < returnLength; i++) {
-    let aux = getRandomInt(dataLength);
+    let aux = getRandomInt(dataLength - 1);
     while (arr.find((x) => aux === x) !== undefined)
-      aux = getRandomInt(dataLength);
+      aux = getRandomInt(dataLength - 1);
     arr.push(aux);
   }
   return arr;
