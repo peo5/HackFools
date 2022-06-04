@@ -1,4 +1,4 @@
 # Projeto feito para o hackfools
 
-Não sabemos nem o tema ainda :(
+E o tema é ... serviços de pizzaria
 
