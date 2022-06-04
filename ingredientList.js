@@ -1,5 +1,20 @@
 ingredients = {
-  salt: ['Calabresa', 'Mussarela', 'Brocolis'],
-  sweet: ['Chocolate', 'Doce de Leite', 'Banana'],
-  weirds: ['Pé de Porco', 'Wasabi', 'Buchada de Bode'],
+  salt: [0, 1],
+  sweet: [],
+  weirds: [],
 };
+
+let ingredientsG = [
+  {
+    name: 'calabresa',
+    svg: `
+		<circle r="10" fill="red" /> 
+		`,
+  },
+  {
+    name: 'pimentao',
+    svg: `
+		<rect width='15' height='5' fill="green" /> 
+		`,
+  },
+];

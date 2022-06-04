@@ -1,16 +1,40 @@
  html {
+     margin:0;
      height: 100%;
  }
 
 body{
+    padding:20px;
     margin: 0;
     height: 100%;
     background-image: linear-gradient(rgb(255, 167, 52),rgb(255, 212, 155) );
+    /* background-color: white; */
 }
 
 h1{
     margin-bottom: 30px;
 }
+h4{
+    margin-top: 5px;
+}
 button {
+    margin-top: 15px;
+}
+
+.container{
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+    overflow: hidden;
+    padding-bottom: 50px;
+    background-color: white;
+    
+    padding:50px;
+}
+
+.svg-container{
+    height: 140px;
+}
+
+.prepare-container{
     margin-top: 15px;
 }

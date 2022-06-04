@@ -4,7 +4,7 @@ const renderPizzaIngredientList = (pizza) => {
   for (let i = 0; i < pizza.length; i++) {
     const newElement = document.createElement('li');
     newElement.classList = 'list-group-item';
-    newElement.innerText = ingredientsToGenerate[pizza[i]];
+    newElement.innerText = ingredientsG[ingredientsToGenerate[pizza[i]]].name;
     listContainer.appendChild(newElement);
   }
 };
